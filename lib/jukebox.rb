@@ -58,7 +58,9 @@ def play(songs)
     puts "Invalid input, please try again"
   end
 end
-binding.pry
+
+run(songs)
+
 def exiter
   puts "Goodbye"
 end
