@@ -25,7 +25,7 @@ def run(songs)
     when "play"
       play(songs)
     when "exit"
-      exiter
+      exit_jukebox
       break
     else
       help
@@ -71,6 +71,6 @@ end
 
 
 
-def exiter
+def exit_jukebox
   puts "Goodbye"
 end
