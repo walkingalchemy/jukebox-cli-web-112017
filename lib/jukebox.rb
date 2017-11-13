@@ -45,21 +45,31 @@ def list(songs)
   songs.each_with_index { |song, index| puts "#{index + 1}. #{song}" }
 end
 
+# def play(songs)
+#   puts "Please enter a song name or number:"
+#   input = gets.chomp
+#   songs.each_with_index do |song, index|
+#     if input == (index + 1).to_s or song
+#       puts "Playing #{song}"
+#       break
+#     end
+#     puts "Invalid input, please try again"
+#   end
+# end
+
 def play(songs)
   puts "Please enter a song name or number:"
-  input = gets.chomp
-  binding.pry
-  songs.each_with_index do |song, index|
-    if input == (index + 1).to_s or song
-      puts "Playing #{song}"
-      binding.pry
-      break
-    end
+  song_to_play = gets.chomp
+  if (1..9).to_a.include?(song_to_play.to_i)
+    puts "Playing #{songs[song_to_play.to_i - 1]}"
+  elsif songs.include?(song_to_play)
+    puts "Playing #{song_to_play}"
+  else
     puts "Invalid input, please try again"
   end
 end
 
-run(songs)
+
 
 def exiter
   puts "Goodbye"
